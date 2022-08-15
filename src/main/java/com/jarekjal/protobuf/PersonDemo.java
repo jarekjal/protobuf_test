@@ -1,5 +1,6 @@
 package com.jarekjal.protobuf;
 
+import com.google.protobuf.Int32Value;
 import com.jarekjal.models.Person;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class PersonDemo {
 
         Person sam = Person.newBuilder()
                 .setName("Sam")
-                .setAge(10)
+                .setAge(Int32Value.newBuilder().setValue(10).build())
                 .build();
 
         Path path = Paths.get("sam.ser");

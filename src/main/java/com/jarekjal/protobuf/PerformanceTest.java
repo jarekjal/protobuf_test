@@ -1,6 +1,7 @@
 package com.jarekjal.protobuf;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.protobuf.Int32Value;
 import com.jarekjal.json.JPerson;
 import com.jarekjal.models.Person;
 
@@ -22,7 +23,7 @@ public class PerformanceTest {
 
         Person samProto = Person.newBuilder()
                 .setName("sam")
-                .setAge(10)
+                .setAge(Int32Value.newBuilder().setValue(10).build())
                 .build();
         Runnable serializeProtoBuf = () -> {
             byte[] bytes = samProto.toByteArray();

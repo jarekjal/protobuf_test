@@ -1,5 +1,6 @@
 package com.jarekjal.protobuf;
 
+import com.google.protobuf.Int32Value;
 import com.google.protobuf.TextFormat;
 import com.jarekjal.models.Address;
 import com.jarekjal.models.Car;
@@ -25,7 +26,7 @@ public class CompositionDemo {
                 .build();
         Person jarek = Person.newBuilder()
                 .setName("Jarosław Jałoszyński")
-                .setAge(42)
+                .setAge(Int32Value.newBuilder().setValue(42).build())
                 .setAddress(address)
                 .addAllCar(List.of(car))
                 .build();
