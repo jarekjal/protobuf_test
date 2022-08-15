@@ -20,12 +20,11 @@ public class PerformanceTest {
             }
         };
 
-
+        Person samProto = Person.newBuilder()
+                .setName("sam")
+                .setAge(10)
+                .build();
         Runnable serializeProtoBuf = () -> {
-            Person samProto = Person.newBuilder()
-                    .setName("sam")
-                    .setAge(10)
-                    .build();
             byte[] bytes = samProto.toByteArray();
             try {
                 Person newSam = Person.parseFrom(bytes);
