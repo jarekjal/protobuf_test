@@ -24,7 +24,7 @@ public class VersionCompatibilityTest {
 
         Path pathV1 = Paths.get("tv-v1.ser");
         Path pathV2 = Paths.get("tv-v2.ser");
-        byte[] bytes = Files.readAllBytes(pathV2);
+        byte[] bytes = Files.readAllBytes(pathV1);
         System.out.println(
                 Television.parseFrom(bytes)
         );

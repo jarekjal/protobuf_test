@@ -15,9 +15,11 @@ option java_package = "com.jarekjal.models";
   Type type = 3;
 }*/
 
-//v3
+//v4
 message Television {
   string brand = 1;
+  reserved 2;
+  int32 price = 4;
   Type type = 3;
 }
 
